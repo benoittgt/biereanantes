@@ -30,17 +30,31 @@ function init() {
   });
 }
 
+function buildPopup(row) {
+  let htmlPopup = []
+
+  let barName = `<h3 class='bar-name'><a href=${row.Site}>${row.Nom}</a></h3>`
+
+  let coupon = ''
+  if (row.Coupon) {
+    coupon = `<h3 class='coupon-link'><a href=${row.Coupon}>Coupon</a></h3>`
+  }
+
+  let webshop = ''
+  if (row.Webshop) {
+    coupon = `<h3 class='webshop-link'><a href=${row.Webshop}>Webshop</a></h3>`
+  }
+
+  let detail = `<div class='detail'>
+                  <h4><b>Type: </b>${row.Type}</h4>
+                  <h4><b>Adresse: </b>${row.Adresse}</h4>
+                </div>`
+  return [barName,coupon,detail].join('')
+}
+
 function addPoints(data) {
   data.forEach(function(row) {
-    var popup = new mapboxgl.Popup()
-      .setHTML(
-        `<h3 class='bar-name'><a href=${row.Site}>${row.Nom}</a></h3>
-        <h3 class='webshop-link'><a href=${row.Webshop}>Webshop</a></h3>
-        <div class='detail'>
-          <h4><b>Type: </b>${row.Type}</h4>
-          <h4><b>Adresse: </b>${row.Adresse}</h4>
-        </div>`
-      );
+    var popup = new mapboxgl.Popup().setHTML(buildPopup(row));
 
     // create a HTML element for each feature
     var el = document.createElement('div');

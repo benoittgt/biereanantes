@@ -64,6 +64,10 @@ a:hover {
   border-top-right-radius: 10px;
 }
 
+.mapboxgl-popup-content h3.coupon-link {
+  background: #e6e7d5;
+}
+
 .mapboxgl-popup-content h3.webshop-link {
   background: rgb(230, 219, 199);
 }
