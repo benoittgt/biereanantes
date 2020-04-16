@@ -84,7 +84,7 @@ function addPoints(data) {
     el.innerHTML = `<i class="fas ${chooseIcon(row.Type)} fa-lg"></i>`;
 
     var marker = new mapboxgl.Marker(el)
-      .setLngLat([row.Longitude, row.Latitude])
+      .setLngLat(row.Position.split(', ').reverse())
       .setPopup(popup)
       .addTo(map);
   });
