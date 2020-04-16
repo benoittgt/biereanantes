@@ -46,7 +46,7 @@ var map = new mapboxgl.Map({
   container: 'map',
   style: "mapbox://styles/nantesbeerclub/ck92kzhyk0k9n1io09i1c9kj2",
   center: [-1.556, 47.20,],
-  zoom: 11.43,
+  zoom: 12.43,
   transformRequest: transformRequest
 });
 
@@ -77,9 +77,9 @@ function buildPopup(row) {
   }
 
   let details = ''
-  // if (row.Details) {
-  //   details = `<i class='place-detail'>${row.Details}</i>`
-  // }
+  if (row.Details) {
+    details = `<i class='place-detail'>${row.Details}</i>`
+  }
 
   let addressType = `<h4><b>Type: </b>${row.Type}</h4>
                   <h4><b>Adresse: </b>${row.Adresse}</h4>`
