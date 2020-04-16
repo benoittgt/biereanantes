@@ -45,9 +45,9 @@ function buildPopup(row) {
   }
 
   let details = ''
-  if (row.Details) {
-    details = `<i class='place-detail'>${row.Details}</i>`
-  }
+  // if (row.Details) {
+  //   details = `<i class='place-detail'>${row.Details}</i>`
+  // }
 
   let addressType = `<h4><b>Type: </b>${row.Type}</h4>
                   <h4><b>Adresse: </b>${row.Adresse}</h4>`
@@ -67,7 +67,7 @@ function buildPopup(row) {
 function chooseIcon(placeType) {
   let iconType = {
     'Brasserie': 'fa-warehouse',
-    'Cave': 'fa-beer',
+    'Cave': 'fa-store',
     'Coupon': 'fa-hand-holding-heart',
     'Point de vente':  'fa-shopping-basket'
   }
