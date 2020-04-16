@@ -1,5 +1,4 @@
 body {
-  background: #404040;
   margin: 0;
   padding: 0;
 }
@@ -91,3 +90,19 @@ a:hover {
 .mapboxgl-popup-anchor-top>.mapboxgl-popup-tip {
   border-bottom-color: rgb(61, 59, 59);
 }
+
+.loader{
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  z-index: 1;
+}
+
+/*
+Set the color of the icon
+ */
+  svg path,
+  svg rect{
+    fill: #C6540F;
+  }
+
