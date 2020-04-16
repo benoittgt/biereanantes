@@ -52,16 +52,24 @@ function buildPopup(row) {
   return [barName,coupon,detail].join('')
 }
 
+function chooseIcon(placeType) {
+  let iconType = {
+    'Brasserie': 'fa-warehouse',
+    'Cave': 'fa-beer',
+    'Coupon': 'fa-hand-holding-heart',
+    'Point de vente':  'fa-shopping-basket'
+  }
+
+  return iconType[placeType] || 'fa-map-marker'
+}
+
 function addPoints(data) {
   data.forEach(function(row) {
     var popup = new mapboxgl.Popup().setHTML(buildPopup(row));
 
-    // create a HTML element for each feature
     var el = document.createElement('div');
     el.className = 'marker';
-    console.log(row);
-    <!-- el.style.color = row.properties['marker-col']; -->
-    el.innerHTML = `<i class="fas ${row.icon} fa-lg"></i>`;
+    el.innerHTML = `<i class="fas ${chooseIcon(row.Type)} fa-lg"></i>`;
 
     var marker = new mapboxgl.Marker(el)
       .setLngLat([row.Longitude, row.Latitude])
