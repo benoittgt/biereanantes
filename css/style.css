@@ -4,6 +4,14 @@ body {
   padding: 0;
 }
 
+a {
+  color: black;
+}
+
+a:visited {
+  color: #595858;
+}
+
 #map {
   border-left: 1px solid #fff;
   position: absolute;
@@ -26,12 +34,15 @@ body {
   width: 250px;
 }
 
+.mapboxgl-popup-content .detail {
+  padding: 4%;
+}
+
 .mapboxgl-popup-content-wrapper {
   padding: 1%;
 }
 
 .mapboxgl-popup-content h3 {
-  background: rgb(61, 59, 59);
   text-align: center;
   color: #fff;
   margin: 0;
@@ -41,10 +52,19 @@ body {
   margin-top: -5px;
 }
 
+.mapboxgl-popup-content h3.bar-name {
+  background: rgb(191, 202, 213);
+}
+
+.mapboxgl-popup-content h3.webshop-link {
+  background: rgb(230, 219, 199);
+}
+
 .mapboxgl-popup-content h4 {
   margin: 0;
+  padding-top: 5px;
   display: block;
-  padding: 10px 3px 10px 10px;
+  padding: 0px 0px 0px 0px;
   font-weight: 400;
 }
 

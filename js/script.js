@@ -33,14 +33,21 @@ function init() {
 function addPoints(data) {
   data.forEach(function(row) {
     var popup = new mapboxgl.Popup()
-      .setHTML(`<h3>` + row.Name + `</h3>` + '<h4>' + '<b>' + 'Address: ' + '</b>' + row.Address + '</h4>' + '<h4>' + '<b>' + 'Phone: ' + '</b>' + row.Phone + '</h4>');
+      .setHTML(
+        `<h3 class='bar-name'><a href=${row.Site}>${row.Nom}</a></h3>
+        <h3 class='webshop-link'><a href=${row.Webshop}>Webshop</a></h3>
+        <div class='detail'>
+          <h4><b>Type: </b>${row.Type}</h4>
+          <h4><b>Adresse: </b>${row.Adresse}</h4>
+        </div>`
+      );
 
     // create a HTML element for each feature
     var el = document.createElement('div');
     el.className = 'marker';
     console.log(row);
     <!-- el.style.color = row.properties['marker-col']; -->
-    el.innerHTML = '<i class="fas fa-train"></i>';
+    el.innerHTML = `<i class="fas ${row.icon}"></i>`;
 
     var marker = new mapboxgl.Marker(el)
       .setLngLat([row.Longitude, row.Latitude])
