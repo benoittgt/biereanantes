@@ -11,13 +11,12 @@ var transformRequest = (url, resourceType) => {
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibmFudGVzYmVlcmNsdWIiLCJhIjoiY2s5Mmt4MmY5MDE1ZTNsa2Fma2gzbDd5NSJ9.XMmKEkOpwAGdIjiAydy70w';
 var map = new mapboxgl.Map({
-  container: 'map', // container id
-  style: "mapbox://styles/nantesbeerclub/ck92kzhyk0k9n1io09i1c9kj2", //YOUR TURN: choose a style: https://docs.mapbox.com/api/maps/#styles
-  center: [-1.556, 47.20,], // starting position [lng, lat]
-  zoom: 11.43, // starting zoom //
+  container: 'map',
+  style: "mapbox://styles/nantesbeerclub/ck92kzhyk0k9n1io09i1c9kj2",
+  center: [-1.556, 47.20,],
+  zoom: 11.43,
   transformRequest: transformRequest
 });
-
 
 map.on("load", function() {
   init();
@@ -31,18 +30,17 @@ function init() {
   });
 }
 
-
 function addPoints(data) {
   data.forEach(function(row) {
     var popup = new mapboxgl.Popup()
-      .setHTML(`<h3>` + row.Name + `</h3>` + '<h4>' + '<b>' + 'Address: ' + '</b>' + row.Address + '</h4>' + '<h4>' + '<b>' + 'Phone: ' + '</b>' + row.Phone + '</h4>'); // use the table to populate your popup with text
+      .setHTML(`<h3>` + row.Name + `</h3>` + '<h4>' + '<b>' + 'Address: ' + '</b>' + row.Address + '</h4>' + '<h4>' + '<b>' + 'Phone: ' + '</b>' + row.Phone + '</h4>');
 
     // create a HTML element for each feature
     var el = document.createElement('div');
     el.className = 'marker';
     console.log(row);
     <!-- el.style.color = row.properties['marker-col']; -->
-      el.innerHTML = '<i class="fas fa-train"></i>';
+    el.innerHTML = '<i class="fas fa-train"></i>';
 
     var marker = new mapboxgl.Marker(el)
       .setLngLat([row.Longitude, row.Latitude])
