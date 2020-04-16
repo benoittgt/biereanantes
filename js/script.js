@@ -45,7 +45,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibmFudGVzYmVlcmNsdWIiLCJhIjoiY2s5Mmt4MmY5MDE1Z
 var map = new mapboxgl.Map({
   container: 'map',
   style: "mapbox://styles/nantesbeerclub/ck92kzhyk0k9n1io09i1c9kj2",
-  center: [-1.556, 47.20,],
+  center: [-1.566839, 47.217261],
   zoom: 12.43,
   transformRequest: transformRequest
 });
