@@ -31,7 +31,6 @@ function init() {
 }
 
 function buildPopup(row) {
-  let htmlPopup = []
 
   let barName = `<h3 class='bar-name'><a href=${row.Site}>${row.Nom}</a></h3>`
 
@@ -45,11 +44,24 @@ function buildPopup(row) {
     coupon = `<h3 class='webshop-link'><a href=${row.Webshop}>Webshop</a></h3>`
   }
 
-  let detail = `<div class='detail'>
-                  <h4><b>Type: </b>${row.Type}</h4>
-                  <h4><b>Adresse: </b>${row.Adresse}</h4>
-                </div>`
-  return [barName,coupon,detail].join('')
+  let details = ''
+  if (row.Details) {
+    details = `<i class='place-detail'>${row.Details}</i>`
+  }
+
+  let addressType = `<h4><b>Type: </b>${row.Type}</h4>
+                  <h4><b>Adresse: </b>${row.Adresse}</h4>`
+  let popup = [
+    barName,
+    coupon,
+    webshop,
+    `<div class='detail'>`,
+    details,
+    addressType,
+    `</div>`
+  ].join('')
+
+  return popup
 }
 
 function chooseIcon(placeType) {
