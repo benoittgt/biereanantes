@@ -6,10 +6,15 @@ body {
 
 a {
   color: black;
+  text-decoration: none;
 }
 
 a:visited {
   color: #595858;
+}
+
+a:hover {
+  color: #717171;
 }
 
 #map {
@@ -32,6 +37,7 @@ a:visited {
   font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
   padding: 0;
   width: 250px;
+  border-radius: 0px 0px 20px 20px;
 }
 
 .mapboxgl-popup-content .detail {
@@ -54,6 +60,8 @@ a:visited {
 
 .mapboxgl-popup-content h3.bar-name {
   background: rgb(191, 202, 213);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .mapboxgl-popup-content h3.webshop-link {

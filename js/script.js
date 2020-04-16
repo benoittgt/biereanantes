@@ -47,7 +47,7 @@ function addPoints(data) {
     el.className = 'marker';
     console.log(row);
     <!-- el.style.color = row.properties['marker-col']; -->
-    el.innerHTML = `<i class="fas ${row.icon}"></i>`;
+    el.innerHTML = `<i class="fas ${row.icon} fa-lg"></i>`;
 
     var marker = new mapboxgl.Marker(el)
       .setLngLat([row.Longitude, row.Latitude])
