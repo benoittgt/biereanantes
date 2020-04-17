@@ -27,12 +27,13 @@ header {
 
 h1 {
   position: fixed;
-  top: 20px;
+  top: 14px;
   left: 100px;
   color: black;
-  font-family: sans-serif;
+  font-weight: unset;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+  text-decoration: none;
   font-size: 18px;
-  text-transform: uppercase;
   z-index: 2;
 }
 
