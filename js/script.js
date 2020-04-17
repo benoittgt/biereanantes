@@ -98,10 +98,11 @@ function buildPopup(row) {
 
 function chooseIcon(placeType) {
   let iconType = {
-    'Brasserie': 'fa-warehouse',
-    'Cave': 'fa-store',
-    'Coupon': 'fa-hand-holding-heart',
-    'Point de vente':  'fa-shopping-basket'
+    'Brasserie': 'fa-warehouse fa-lg',
+    'Cave à bière': 'fa-store fa-lg',
+    'Cave': 'fa-store fa-sm',
+    'Coupon': 'fa-hand-holding-heart fa-sm',
+    'Point de vente':  'fa-shopping-basket fa-sm'
   }
 
   return iconType[placeType] || 'fa-map-marker'
@@ -113,7 +114,7 @@ function addPoints(data) {
 
     var el = document.createElement('div');
     el.className = 'marker';
-    el.innerHTML = `<i class="fas ${chooseIcon(row.Type)} fa-lg"></i>`;
+    el.innerHTML = `<i class="fas ${chooseIcon(row.Type)} "></i>`;
 
     var marker = new mapboxgl.Marker(el)
       .setLngLat(row.Position.split(', ').reverse())
