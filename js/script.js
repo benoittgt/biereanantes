@@ -92,16 +92,16 @@ function buildPopup(row) {
 
   let timetable = ''
   if (row.Horaires) {
-    timetable = `<h4><b>Horaires: </b>${row.Horaires}</h4>`
+    timetable = `<h4><i class="fas fa-clock"></i> : </b>${row.Horaires}</h4>`
   }
 
   let contact = ''
   if (row.Contact) {
-    contact = `<h4><b>Contact: </b>${row.Contact}</h4>`
+    contact = `<h4><b><i class="fas fa-phone-alt"></i> : </b>${row.Contact}</h4>`
   }
 
-  let addressType = `<h4><b>Type: </b>${row.Type}</h4>
-                  <h4><b>Adresse: </b>${row.Adresse}</h4>`
+  let addressType = `<h4><b><i class="fas fa-map"></i> : </b>${row.Adresse}</h4>`
+
   let popup = [
     barName,
     coupon,
