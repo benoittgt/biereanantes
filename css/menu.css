@@ -39,6 +39,7 @@
   color: #232323;
 
   transition: color 0.3s ease;
+  border-bottom: #595959 0.12em solid;
 }
 
 #menuToggle a:hover
