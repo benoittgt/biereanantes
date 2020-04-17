@@ -105,7 +105,7 @@ function buildPopup(row) {
   return popup
 }
 
-function chooseIcon(placeType) {
+function chooseIcon(placeType, livraison) {
   let iconType = {
     'Brasserie': 'fa-warehouse fa-lg',
     'Cave à bière': 'fa-store fa-lg',
@@ -113,8 +113,13 @@ function chooseIcon(placeType) {
     'Coupon': 'fa-hand-holding-heart fa-sm',
     'Point de vente':  'fa-shopping-basket fa-sm'
   }
+  let icon = iconType[placeType] || 'fa-map-marker'
+  if (livraison == 'Oui') {
+    return `${icon} livraison`
+  } else {
+    return icon
+  }
 
-  return iconType[placeType] || 'fa-map-marker'
 }
 
 function addPoints(data) {
@@ -123,7 +128,7 @@ function addPoints(data) {
 
     var el = document.createElement('div');
     el.className = 'marker';
-    el.innerHTML = `<i class="fas ${chooseIcon(row.Type)} "></i>`;
+    el.innerHTML = `<i class="fas ${chooseIcon(row.Type, row.Livraison)} "></i>`;
 
     var marker = new mapboxgl.Marker(el)
       .setLngLat(row.Position.split(', ').reverse())
