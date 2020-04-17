@@ -44,7 +44,7 @@ var transformRequest = (url, resourceType) => {
 function mapZoom() {
   width = document.documentElement.clientWidth
   if (width < 768) {
-    return 10;
+    return 10.2;
   }  else {
     return 12;
   }
