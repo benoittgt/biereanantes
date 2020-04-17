@@ -18,7 +18,7 @@ a:hover {
 }
 
 header {
-  width: 585px;
+  width: 336px;
   background-color: #EDEDED;
   position: fixed;
   z-index: 3;
@@ -27,7 +27,6 @@ header {
 
 h1 {
   position: fixed;
-  top: 14px;
   left: 100px;
   color: black;
   font-weight: unset;
