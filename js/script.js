@@ -41,12 +41,21 @@ var transformRequest = (url, resourceType) => {
   };
 };
 
+function mapZoom() {
+  width = document.documentElement.clientWidth
+  if (width < 768) {
+    return 10;
+  }  else {
+    return 12;
+  }
+}
+
 mapboxgl.accessToken = 'pk.eyJ1IjoibmFudGVzYmVlcmNsdWIiLCJhIjoiY2s5Mmt4MmY5MDE1ZTNsa2Fma2gzbDd5NSJ9.XMmKEkOpwAGdIjiAydy70w';
 var map = new mapboxgl.Map({
   container: 'map',
   style: "mapbox://styles/nantesbeerclub/ck92kzhyk0k9n1io09i1c9kj2",
   center: [-1.566839, 47.217261],
-  zoom: 12.43,
+  zoom: mapZoom(),
   transformRequest: transformRequest
 });
 
