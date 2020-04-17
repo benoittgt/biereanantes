@@ -9,16 +9,35 @@ a {
   border-bottom: #595959 0.12em solid;
 }
 
-.livraison {
-  color: #c6540f;
-}
-
 a:visited {
   color: #353535;
 }
 
 a:hover {
   color: #717171;
+}
+
+header {
+  width: 585px;
+  background-color: #EDEDED;
+  position: fixed;
+  z-index: 3;
+  height: 73px;
+}
+
+h1 {
+  position: fixed;
+  top: 20px;
+  left: 100px;
+  color: black;
+  font-family: sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.livraison {
+  color: #c6540f;
 }
 
 #map {
