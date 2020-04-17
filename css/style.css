@@ -17,6 +17,13 @@ a:hover {
   color: #717171;
 }
 
+@font-face {
+  font-family: 'Font-Awesome';
+  src: url('webfonts/fa-solid-900.woff2') format("woff2"),
+  url('webfonts/fa-solid-900.woff') format('woff'), 
+  url('webfonts/fa-solid-900.ttf') format('truetype');
+}
+
 header {
   width: 336px;
   background-color: #EDEDED;
