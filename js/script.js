@@ -143,7 +143,7 @@ function addPoints(data) {
     el.innerHTML = `<i class="fas ${chooseIcon(row.Type, row.Livraison)} "></i>`;
 
     var marker = new mapboxgl.Marker(el)
-      .setLngLat(row.Position.split(', ').reverse())
+      .setLngLat(row.Position.replace(/\s/g, '').split(',').reverse())
       .setPopup(popup)
       .addTo(map);
   });
