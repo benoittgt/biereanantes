@@ -142,10 +142,15 @@ function addPoints(data) {
     el.className = 'marker';
     el.innerHTML = `<i class="fas ${chooseIcon(row.Type, row.Livraison)} "></i>`;
 
-    var marker = new mapboxgl.Marker(el)
-      .setLngLat(row.Position.replace(/\s/g, '').split(',').reverse())
-      .setPopup(popup)
-      .addTo(map);
+    try {
+      var marker = new mapboxgl.Marker(el)
+        .setLngLat(row.PositionValueBackup.replace(/\s/g, '').split(',').reverse())
+        .setPopup(popup)
+        .addTo(map);
+    }
+    catch(error) {
+      console.log(`Error: ${error}`);
+    }
   });
 }
 
