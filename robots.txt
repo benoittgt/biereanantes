@@ -3,4 +3,4 @@ Disallow: /css/
 Disallow: /js/
 Disallow: /img/
 
-Sitemap: http://biereanantes.hopsandfork.com/sitemap.xml
+Sitemap: https://www.biereanantes.fr/sitemap.xml
