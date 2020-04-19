@@ -1,6 +1,5 @@
 User-agent: *
 Disallow: /css/
 Disallow: /js/
-Disallow: /img/
 
 Sitemap: https://www.biereanantes.fr/sitemap.xml
