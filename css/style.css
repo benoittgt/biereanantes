@@ -122,6 +122,11 @@ h1 {
   border-bottom-color: rgb(61, 59, 59);
 }
 
+/* Get little bit bigger small font awesome icons */
+.marker {
+  font-size: 1.3em;
+}
+
 .loader{
   top: 50%;
   left: 50%;
@@ -131,9 +136,8 @@ h1 {
 
 /*
 Set the color of the icon
- */
-  svg path,
-  svg rect{
-    fill: #C6540F;
-  }
-
+*/
+svg path,
+svg rect{
+  fill: #C6540F;
+}

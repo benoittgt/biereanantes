@@ -140,7 +140,7 @@ function addPoints(data) {
 
     var el = document.createElement('div');
     el.className = 'marker';
-    el.innerHTML = `<i class="fas ${chooseIcon(row.Type, row.Livraison)} "></i>`;
+    el.innerHTML = `<i class="fas ${chooseIcon(row.Type, row.Livraison)}"></i>`;
 
     try {
       var marker = new mapboxgl.Marker(el)
