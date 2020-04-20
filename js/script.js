@@ -31,9 +31,8 @@ waitForElement(".marker").then(function(element) {
 });
 
 let transformRequest = (url, resourceType) => {
-  let isMapboxRequest =
-    url.slice(8, 22) === "api.mapbox.com" ||
-    url.slice(10, 26) === "tiles.mapbox.com";
+  const isMapboxRequest = url.indexOf('mapbox.com') !== -1;
+
   return {
     url: isMapboxRequest
     ? url.replace("?", "?pluginName=sheetMapper&")
