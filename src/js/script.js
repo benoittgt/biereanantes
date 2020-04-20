@@ -144,7 +144,7 @@ function addPoints(data) {
         .addTo(map);
     }
     catch(error) {
-      console.log(`Error: ${error}`);
+      console.log(`Error: ${error}. Row: ${row.Nom}`);
     }
   });
 }
