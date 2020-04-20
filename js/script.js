@@ -1,17 +1,17 @@
 // Detect when element are loaded
 function waitForElement(selector) {
   return new Promise(function(resolve, reject) {
-    var element = document.querySelector(selector);
+    let element = document.querySelector(selector);
 
     if(element) {
       resolve(element);
       return;
     }
 
-    var observer = new MutationObserver(function(mutations) {
+    let observer = new MutationObserver(function(mutations) {
       mutations.forEach(function(mutation) {
-        var nodes = Array.from(mutation.addedNodes);
-        for(var node of nodes) {
+        let nodes = Array.from(mutation.addedNodes);
+        for(let node of nodes) {
           if(node.matches && node.matches(selector)) {
             observer.disconnect();
             resolve(node);
@@ -30,8 +30,8 @@ waitForElement(".marker").then(function(element) {
   document.querySelector('.loader').style.display = 'none'
 });
 
-var transformRequest = (url, resourceType) => {
-  var isMapboxRequest =
+let transformRequest = (url, resourceType) => {
+  let isMapboxRequest =
     url.slice(8, 22) === "api.mapbox.com" ||
     url.slice(10, 26) === "tiles.mapbox.com";
   return {
@@ -51,7 +51,7 @@ function mapZoom() {
 }
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibmFudGVzYmVlcmNsdWIiLCJhIjoiY2s5Mmt4MmY5MDE1ZTNsa2Fma2gzbDd5NSJ9.XMmKEkOpwAGdIjiAydy70w';
-var map = new mapboxgl.Map({
+let map = new mapboxgl.Map({
   container: 'map',
   style: "mapbox://styles/nantesbeerclub/ck92kzhyk0k9n1io09i1c9kj2",
   center: [-1.566839, 47.217261],
@@ -136,14 +136,14 @@ function chooseIcon(placeType, livraison) {
 
 function addPoints(data) {
   data.forEach(function(row) {
-    var popup = new mapboxgl.Popup().setHTML(buildPopup(row));
+    let popup = new mapboxgl.Popup().setHTML(buildPopup(row));
 
-    var el = document.createElement('div');
+    let el = document.createElement('div');
     el.className = 'marker';
     el.innerHTML = `<i class="fas ${chooseIcon(row.Type, row.Livraison)}"></i>`;
 
     try {
-      var marker = new mapboxgl.Marker(el)
+      let marker = new mapboxgl.Marker(el)
         .setLngLat(row.PositionValueBackup.replace(/\s/g, '').split(',').reverse())
         .setPopup(popup)
         .addTo(map);
