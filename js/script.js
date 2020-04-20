@@ -72,30 +72,26 @@ function init() {
 }
 
 function buildPopup(row) {
+  let coupon, webshop, details, timetable, contact = ''
 
   let barName = `<h3 class='bar-name'><a target="_blank" href=${row.Site}>${row.Nom}</a></h3>`
 
-  let coupon = ''
   if (row.Coupon) {
     coupon = `<h3 class='coupon-link'><a target="_blank" href=${row.Coupon}>Coupon</a></h3>`
   }
 
-  let webshop = ''
   if (row.Webshop) {
     coupon = `<h3 class='webshop-link'><a target="_blank" href=${row.Webshop}>Webshop</a></h3>`
   }
 
-  let details = ''
   if (row.Details) {
     details = `<i class='place-detail'>${row.Details}</i>`
   }
 
-  let timetable = ''
   if (row.Horaires) {
     timetable = `<h4><i class="fas fa-clock"></i> : </b>${row.Horaires}</h4>`
   }
 
-  let contact = ''
   if (row.Contact) {
     contact = `<h4><b><i class="fas fa-phone-alt"></i> : </b>${row.Contact}</h4>`
   }
