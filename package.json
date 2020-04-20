@@ -1,0 +1,32 @@
+{
+  "name": "biereanantes",
+  "version": "1.0.0",
+  "description": "https://www.biereanantes.fr/",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel --no-cache src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benoittgt/biereanantes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benoittgt/biereanantes/issues"
+  },
+  "homepage": "https://github.com/benoittgt/biereanantes#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "babel-preset-env": "^1.7.0",
+    "mapbox-gl": "^1.9.1",
+    "parcel-bundler": "^1.12.4",
+    "tabletop": "^1.6.2"
+  },
+  "dependencies": {
+    "js": "^0.1.0"
+  }
+}
