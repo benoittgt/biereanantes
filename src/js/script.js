@@ -122,9 +122,9 @@ function chooseIcon(placeType, livraison) {
   }
   let icon = iconType[placeType] || 'fa-map-marker'
   if (livraison == 'Oui') {
-    return `${icon} livraison`
+    return `${icon} delivery`
   } else {
-    return icon
+    return `${icon} no-delivery`
   }
 
 }

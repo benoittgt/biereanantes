@@ -43,8 +43,12 @@ h1 {
   z-index: 2;
 }
 
-.livraison {
+.delivery {
   color: #c6540f;
+}
+
+.no-delivery {
+  color: #244a57;
 }
 
 #map {
