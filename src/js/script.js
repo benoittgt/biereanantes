@@ -64,7 +64,7 @@ map.on("load", function() {
 
 function init() {
   Tabletop.init({
-    key: 'https://docs.google.com/spreadsheets/d/1x8svBTaLETQd0AD2L57GwXbA1ZTP9iAWlIKON_fnwcI/edit#gid=0',
+    key: 'https://docs.google.com/spreadsheets/d/1XiDdnLFx94EopYhj1jsFr1QH3zRXpk7BjoQjtTRMcQ8/edit#gid=0',
     callback: addPoints,
     simpleSheet: true
   });
@@ -139,7 +139,7 @@ function addPoints(data) {
 
     try {
       let marker = new mapboxgl.Marker(el)
-        .setLngLat(row.PositionValueBackup.replace(/\s/g, '').split(',').reverse())
+        .setLngLat(row.Position.replace(/\s/g, '').split(',').reverse())
         .setPopup(popup)
         .addTo(map);
     }
