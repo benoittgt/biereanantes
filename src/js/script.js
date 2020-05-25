@@ -71,7 +71,7 @@ function init() {
 }
 
 function buildPopup(row) {
-  let coupon, webshop, details, timetable, contact = ''
+  let coupon, webshop, details, timetable, contact, growler = ''
 
   let barName = `<h3 class='bar-name'><a target="_blank" href=${row.Site}>${row.Nom}</a></h3>`
 
@@ -85,6 +85,10 @@ function buildPopup(row) {
 
   if (row.Details) {
     details = `<i class='place-detail'>${row.Details}</i>`
+  }
+
+  if (row.Growler) {
+    growler = `<h4><i>Growler:</i> </b>${row.Growler}</h4>`
   }
 
   if (row.Horaires) {
@@ -103,6 +107,7 @@ function buildPopup(row) {
     webshop,
     `<div class='detail'>`,
     details,
+    growler,
     timetable,
     contact,
     addressType,
@@ -148,4 +153,3 @@ function addPoints(data) {
     }
   });
 }
-
