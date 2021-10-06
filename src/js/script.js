@@ -63,11 +63,13 @@ map.on("load", function() {
 });
 
 function init() {
-  Tabletop.init({
-    key: 'https://docs.google.com/spreadsheets/d/1x8svBTaLETQd0AD2L57GwXbA1ZTP9iAWlIKON_fnwcI/edit#gid=0',
-    callback: addPoints,
-    simpleSheet: true
-  });
+    Papa.parse('https://docs.google.com/spreadsheets/d/e/2PACX-1vTY1CbYLB6h2v2MWYna6oj1bCgbSQlFgEFrY7-BIw_sLK9cyGDnE3WS6-6ahNx9O9TLMR6OeYCOq2By/pub?output=csv', {
+    download: true,
+    header: true,
+    complete: function(results) {
+      addPoints(results.data)
+    }
+  })
 }
 
 function buildPopup(row) {
