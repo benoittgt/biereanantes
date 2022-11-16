@@ -1,4 +1,4 @@
-# Map the Nantes craft beer scene during COVID-19
+# Map the Nantes craft beer scene
 
 https://www.biereanantes.fr/
 

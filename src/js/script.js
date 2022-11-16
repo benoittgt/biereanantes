@@ -109,9 +109,9 @@ function buildPopup(row) {
     webshop,
     `<div class='detail'>`,
     details,
-    growler,
+    // growler,
     timetable,
-    contact,
+    // contact,
     addressType,
     `</div>`
   ].join('')
@@ -128,12 +128,11 @@ function chooseIcon(placeType, livraison, customIcon) {
     'Point de vente':  'fa-shopping-basket fa-sm'
   }
   let icon = customIcon || iconType[placeType] || 'fa-map-marker'
-  if (livraison == 'Oui') {
+  if (placeType == 'Brasserie') {
     return `${icon} delivery`
   } else {
     return `${icon} no-delivery`
   }
-
 }
 
 function addPoints(data) {
